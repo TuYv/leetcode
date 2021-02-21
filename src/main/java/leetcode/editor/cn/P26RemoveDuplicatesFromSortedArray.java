@@ -55,15 +55,29 @@ class P26RemoveDuplicatesFromSortedArray{
 class Solution {
     public int removeDuplicates(int[] nums) {
         int length = nums.length;
+        //一个以内的数组直接返回
         if (length < 2) {
             return length;
         }
-        int i = 1;
+        int i = 0;
+        for(int j = 1; j < length; j++) {
+            if (nums[j] != nums[i]) {
+                i++;
+                nums[i] = nums[j];
+            }
+
+        }
+        return i + 1;
+        //看了官网的写法 感觉自己是个傻逼
+        /*int i = 1;
+        //获得第一个有重复的数组
         while(i < length && nums[i] != nums[i - 1]) {
             i++;
         }
         int j = i + 1;
         while(j < length) {
+            //j指针如果和i一样则加一
+            //否则把i替换了 j跳到下一个数字
             if(nums[j] == nums[i]) {
                 j++;
             } else {
@@ -75,7 +89,7 @@ class Solution {
                 }
             }
         }
-        return i;
+        return i;*/
 
     }
 }
