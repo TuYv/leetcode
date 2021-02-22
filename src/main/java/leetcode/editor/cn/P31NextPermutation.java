@@ -118,17 +118,17 @@ public class P31NextPermutation {
 								nums[x] = temp2;
 							}
 						}
-						break;
 					}
+					break;
 				}
-				if (min_index != length) {
-					for (int x = 0, y = nums.length - 1; x < y; x++, y--) {
-						int temp = nums[x];
-						nums[x] = nums[y];
-						nums[y] = temp;
-					}
-				}
+			}
 
+			if (min_index == length) {
+				for (int x = 0, y = nums.length - 1; x < y; x++, y--) {
+					int temp = nums[x];
+					nums[x] = nums[y];
+					nums[y] = temp;
+				}
 			}
 		}
 //leetcode submit region end(Prohibit modification and deletion)
