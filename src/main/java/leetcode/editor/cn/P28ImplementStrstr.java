@@ -28,10 +28,35 @@ package leetcode.editor.cn;
 class P28ImplementStrstr{
     public static void main(String[] args){
         Solution solution = new P28ImplementStrstr().new Solution();
+        solution.strStr("mississippi", "issipi");
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int strStr(String haystack, String needle) {
+        if(needle.length() == 0) {
+            return 0;
+        }
+        if(haystack.length() == 0 || haystack.length() < needle.length()) {
+            return -1;
+        }
+        char firstChar = needle.charAt(0);
+        for (int i = 0; i < haystack.length(); i++) {
+            if(haystack.charAt(i) != firstChar) {
+                while (++i < haystack.length() && haystack.charAt(i) != firstChar);
+            }
+            if(i >= haystack.length()) {
+                return -1;
+            }
+            int k = 1;
+            int max = i + needle.length();
+            if(max > haystack.length()) {
+                return -1;
+            }
+            for(int j = i + 1; j < max && haystack.charAt(j) == needle.charAt(k); j++,k++);
+            if (k == needle.length()) {
+                return i;
+            }
+        }
         return 0;
     }
 }
