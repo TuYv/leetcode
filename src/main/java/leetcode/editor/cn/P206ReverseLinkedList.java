@@ -15,16 +15,9 @@ package leetcode.editor.cn;
 
 //反转链表
 
+import leetcode.editor.cn.utils.ListNode;
+
 public class P206ReverseLinkedList {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public static void main(String[] args) {
         //测试代码

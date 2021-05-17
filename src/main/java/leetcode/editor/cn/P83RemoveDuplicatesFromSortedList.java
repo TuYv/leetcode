@@ -18,6 +18,8 @@ package leetcode.editor.cn;
 
 //删除排序链表中的重复元素
 
+import leetcode.editor.cn.utils.ListNode;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,13 +28,6 @@ public class P83RemoveDuplicatesFromSortedList{
 	 	 //测试代码
 	 	 Solution solution = new P83RemoveDuplicatesFromSortedList().new Solution();
 	 }
-public class ListNode {
-	int val;
-	ListNode next;
-	ListNode() {}
-	ListNode(int val) { this.val = val; }
-	ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-}
 
 //力扣代码
 	//leetcode submit region begin(Prohibit modification and deletion)

@@ -19,7 +19,7 @@
 
 package leetcode.editor.cn;
 
-import leetcode.editor.cn.P21MergeTwoSortedLists.ListNode;
+import leetcode.editor.cn.utils.ListNode;
 
 //java:删除链表的倒数第N个节点
 class P19RemoveNthNodeFromEndOfList{
@@ -33,14 +33,6 @@ class P19RemoveNthNodeFromEndOfList{
             head = head.next;
         }
         solution.removeNthFromEnd(a, 2);
-    }
-
-    public static class ListNode extends P21MergeTwoSortedLists.ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 /**

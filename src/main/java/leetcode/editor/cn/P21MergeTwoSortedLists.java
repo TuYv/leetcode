@@ -12,17 +12,11 @@
 
 package leetcode.editor.cn;
 
-import leetcode.editor.cn.P19RemoveNthNodeFromEndOfList.ListNode;
+
+import leetcode.editor.cn.utils.ListNode;
 
 //java:合并两个有序链表
 class P21MergeTwoSortedLists{
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, P19RemoveNthNodeFromEndOfList.ListNode next) { this.val = val; this.next = next; }
-    }
 
     public static void main(String[] args){
         Solution solution = new P21MergeTwoSortedLists().new Solution();

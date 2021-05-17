@@ -45,17 +45,11 @@ package leetcode.editor.cn;
 
 //两数相加
 
+import leetcode.editor.cn.utils.ListNode;
+
 import java.util.Objects;
 
 public class P2AddTwoNumbers{
-
-	public class ListNode {
-		int val;
-		ListNode next;
-		ListNode() {}
-		ListNode(int val) { this.val = val; }
-		ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-	}
 	 public static void main(String[] args) {
 	 	 //测试代码
 	 	 Solution solution = new P2AddTwoNumbers().new Solution();
