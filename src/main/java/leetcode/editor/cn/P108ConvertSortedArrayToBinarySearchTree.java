@@ -38,6 +38,8 @@ package leetcode.editor.cn;
 
 //将有序数组转换为二叉搜索树
 
+import leetcode.editor.cn.utils.TreeNode;
+
 public class P108ConvertSortedArrayToBinarySearchTree{
 	 public static void main(String[] args) {
 	 	 //测试代码
@@ -62,7 +64,7 @@ public class P108ConvertSortedArrayToBinarySearchTree{
  */
 class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
-
+    	return new TreeNode();
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
