@@ -73,10 +73,24 @@ class P23MergeKSortedLists{
 
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        for(int i = 1; i < lists.length; i++) {
+        //暴力解法
+       /* for(int i = 1; i < lists.length; i++) {
             lists[0] = mergeTwoNode(lists[0], lists[i]);
         }
-        return lists.length == 0 ? null : lists[0];
+        return lists.length == 0 ? null : lists[0];*/
+        //分治算法
+        return merge(lists, 0, lists.length - 1);
+    }
+    //分治
+    private ListNode merge(ListNode[] lists, int left, int right) {
+        if(left == right) {
+            return lists[left];
+        }
+        if (left > right) {
+            return null;
+        }
+        int mid = (left + right) >> 1;
+        return mergeTwoNode(merge(lists,left, mid), merge(lists, mid + 1, right));
     }
 
     //合并两个有序链表
