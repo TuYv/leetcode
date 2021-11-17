@@ -45,7 +45,7 @@ package leetcode.editor.cn;
 
 import java.util.Arrays;
 
-public class P41FirstMissingPositive{ 
+public class P41FirstMissingPositive{
 	 public static void main(String[] args) {
 	 	 //测试代码
 	 	 Solution solution = new P41FirstMissingPositive().new Solution();
