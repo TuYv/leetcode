@@ -22,6 +22,14 @@ public class P206ReverseLinkedList {
     public static void main(String[] args) {
         //测试代码
         Solution solution = new P206ReverseLinkedList().new Solution();
+        ListNode node1 = new ListNode(1);
+        node1.next = new ListNode(2);
+        node1.next.next = new ListNode(3);
+        node1.next.next.next = new ListNode(4);
+        node1.next.next.next.next = new ListNode(5);
+
+        solution.reverseList(node1);
+
     }
 //力扣代码
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -35,7 +43,7 @@ public class P206ReverseLinkedList {
      * }
      */
 
-    class Solution {
+    class Solution {/* 解法1 迭代
         public ListNode reverseList(ListNode head) {
             ListNode prev = null;
             ListNode curr = head;
@@ -47,8 +55,22 @@ public class P206ReverseLinkedList {
                 curr = nextNode;
             }
             return prev;
+        }*/
+        public ListNode reverseList(ListNode head) {
+            ListNode newhead = head;
+            while(head.next != null) {
+                head = head.next;
+            }
+            newhead = reverse(newhead);
+            newhead.next = null;
+            return head;
         }
-
+        public ListNode reverse(ListNode head) {
+            if(head.next != null) {
+                reverse(head.next).next = head;
+            }
+            return head;
+        }
     }
 
 //leetcode submit region end(Prohibit modification and deletion)
