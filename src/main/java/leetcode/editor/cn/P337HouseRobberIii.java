@@ -40,7 +40,7 @@ package leetcode.editor.cn;
 import java.util.Objects;
 
 public class P337HouseRobberIii{
-	  public class TreeNode {
+	  private class TreeNode {
 	      int val;
 	      TreeNode left;
 	      TreeNode right;
