@@ -1,8 +1,5 @@
 package leetcode.editor.cn.utils;
 
-import lombok.Getter;
-import lombok.Setter;
-
 
 public class TreeNode {
     public int val;
