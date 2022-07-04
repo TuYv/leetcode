@@ -80,6 +80,7 @@ class P114FlattenBinaryTreeToLinkedList{
 class Solution {
     public void flatten(TreeNode root) {
         //左节点插入根节点与右节点之间
+        //递归
 /*        if(Objects.isNull(root)) {return;}
         flatten(root.left);
         flatten(root.right);
@@ -89,6 +90,7 @@ class Solution {
         temp.right = root.right;
         root.right = root.left;
         root.left = null;*/
+        //迭代
         while(Objects.nonNull(root)) {
             while (Objects.nonNull(root.left)) {
                 TreeNode temp = root.left;
