@@ -76,9 +76,10 @@ class Solution {
 
         }
         return Math.max(result, tempResult);*/
+        return 0;
 
     }
-}
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

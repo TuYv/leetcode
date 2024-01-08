@@ -44,45 +44,69 @@
 
 package leetcode.editor.cn;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Queue;
 
 //java:组合总和
 class P39CombinationSum{
     public static void main(String[] args){
         Solution solution = new P39CombinationSum().new Solution();
-        solution.combinationSum(new int[] {2,3,6,7}, 7);
+        System.out.println(solution.combinationSum(new int[] {2,3,5}, 8));
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+
         List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(candidates);
+        public List<List<Integer>> combinationSum(int[] candidates, int target) {
 
-        List<Integer> list = new ArrayList<> ();
-        combination(result,list,candidates,0,target);
+            List<Integer> list = new ArrayList<>();
+            getNum(candidates,0, list, target);
+            return result;
+        }
 
-        return result;
-    }
-
-    public void combination(List<List<Integer>> result,List<Integer> list,int[] candidates,int k, int target) {
-        for (int i = k; i < candidates.length; i++) {
-            if(target == candidates[i]) {
-                list.add(candidates[i]);
-                List<Integer> res = new ArrayList<>(list);
-                result.add(res);
-                list.remove(list.size() - 1);
-                return;
-            } else if (target > candidates[i]) {
-                list.add(candidates[i]);
-                combination(result, list, candidates,i, target - candidates[i]);
-                list.remove(list.size() - 1);
-            } else {
+        public void getNum(int[] candidates,int i, List<Integer>list, int target) {
+            if (0 > target) return;
+            if(0 == target) {
+                result.add(new ArrayList<>(list));
                 return;
             }
+            for(int j = i; j < candidates.length; j++) {
+                list.add(candidates[j]);
+                getNum(candidates, j, list, target - candidates[j]);
+                list.remove(list.size() - 1);
+            }
         }
-    }
+
+//    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+//        List<List<Integer>> result = new ArrayList<>();
+//        Arrays.sort(candidates);
+//
+//        List<Integer> list = new ArrayList<> ();
+//        combination(result,list,candidates,0,target);
+//
+//        return result;
+//    }
+//
+//    public void combination(List<List<Integer>> result,List<Integer> list,int[] candidates,int k, int target) {
+//        for (int i = k; i < candidates.length; i++) {
+//            if(target == candidates[i]) {
+//                list.add(candidates[i]);
+//                List<Integer> res = new ArrayList<>(list);
+//                result.add(res);
+//                list.remove(list.size() - 1);
+//                return;
+//            } else if (target > candidates[i]) {
+//                list.add(candidates[i]);
+//                combination(result, list, candidates,i, target - candidates[i]);
+//                list.remove(list.size() - 1);
+//            } else {
+//                return;
+//            }
+//        }
+//    }
 
 }
 //leetcode submit region end(Prohibit modification and deletion)
